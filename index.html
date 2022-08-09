@@ -5,15 +5,22 @@
 	<script>
 		// TODO: create a handler
     function setSearchEnging(event) {
-	console.log("FUNCTION setSearchEngine() IS RUNNING!");
+	//console.log("FUNCTION setSearchEngine() IS RUNNING!");
+	    //document.querySelector('input[name=engine]:checked')
 	    event.preventDefault();
-		
+		let actions = {
+			"google":
+			"duckDuckGo":
+			"bing":
+			"ask":
     }
 		window.addEventListener("load", function(){
 		let form = document.getElementById('searchForm')
 		form.addEventListener('submit', setSearchEngine); 
-		}
-			
+		};
+		let actionURL = actions[selected.value]
+		
+		event.preventDefault();	
 	
 			
         // TODO: register the handler
@@ -23,7 +30,7 @@
 
 <body>
 
-	<form id="searchForm" action ="google.com">
+	<form id="searchForm">
     <!-- TODO: add form elements -->
 	<input name = "q"> value ="Enter Search Term Here">
 	<label>Google<input id "googleOption" type = "radio" name = "engine" value="Google"></label>
