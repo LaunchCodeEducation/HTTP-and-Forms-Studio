@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<script>
 
+
 		const ENGINES_URLS = {
 			google: 'https://www.google.com/search',
 			duckDuckGo: 'https://duckduckgo.com/',
@@ -13,6 +14,7 @@
 		};
 
 		window.addEventListener("load", function () {
+
 			let engines = document.querySelectorAll('input[type=radio]');
 			engines.forEach(engine => {
 				engine.onclick = function () {
@@ -21,6 +23,7 @@
 					console.log('>Form.action ', url);
 				};
 			});
+
 
 		});
 	</script>
@@ -52,6 +55,7 @@
 	<form id="searchForm">
 		<input type="text" id="q" name="q" required>
 		<input type="radio" name="engine" id="engine1" value="google" required><label for="engine1">Google</label>
+
 		<input type="radio" name="engine" id="engine2" value="duckDuckGo"><label for="engine2">DuckDuckGo</label>
 		<input type="radio" name="engine" id="engine3" value="bing"><label for="engine3">Bing</label>
 		<input type="radio" name="engine" id="engine4" value="ask"><label for="engine4">Ask</label>
