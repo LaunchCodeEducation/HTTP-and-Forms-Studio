@@ -4,7 +4,30 @@
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
-    window.addEventListener("load", function(){
+    function setSearchEnging(event) {
+	    let form = document.getElementById('searchForm')
+	    let selected = document.quesrySelector("input[name-engine]:checked");
+	//console.log("FUNCTION setSearchEngine() IS RUNNING!");
+	   
+	    //event.preventDefault();
+		let actions = {
+			"google":"https://www.google.com/search",
+			"duckDuckGo":"https://duckduckgo.com/",
+			"bing": "https://www.bing.com/search",
+			"ask": "https://www.ask.com/web"
+		};
+	    let actionURL = actions[selected.value];
+	    form.setAttribute('action', actionURL);
+			      
+    };
+	window.addEventListener("load", function(){
+		let form = document.getElementById('searchForm')
+		form.addEventListener('submit', setSearchEngine); 
+		};
+		
+		//event.preventDefault();	
+	
+			
         // TODO: register the handler
     });
 	</script>
@@ -14,6 +37,12 @@
 
 	<form id="searchForm">
     <!-- TODO: add form elements -->
+	<input name = "q"> value ="Enter Search Term Here">
+	<label>Google<input id "googleOption" type = "radio" name = "engine" value="Google"></label>
+	<label>DuckDuckGo<input id "duckduckgoOption" type = "radio" name = "engine" value="DuckDuckGo></label>
+	<label>Bing<input id "bingOption" type = "radio" name = "engine" value="Bing" ></label>
+	<label>Ask<input id "askOption" type = "radio" name = "engine" value="Ask"></label>
+	<input type = "submit" value="Go!">Go!</button>
 	</form>
 
 </body>
