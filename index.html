@@ -5,22 +5,27 @@
 	<script>
 		// TODO: create a handler
     function setSearchEnging(event) {
+	    let form = document.getElementById('searchForm')
+	    let selected = document.quesrySelector("input[name-engine]:checked");
 	//console.log("FUNCTION setSearchEngine() IS RUNNING!");
-	    //document.querySelector('input[name=engine]:checked')
-	    event.preventDefault();
+	   
+	    //event.preventDefault();
 		let actions = {
-			"google":
-			"duckDuckGo":
-			"bing":
-			"ask":
-    }
-		window.addEventListener("load", function(){
+			"google":"https://www.google.com/search",
+			"duckDuckGo":"https://duckduckgo.com/",
+			"bing": "https://www.bing.com/search",
+			"ask": "https://www.ask.com/web"
+		};
+	    let actionURL = actions[selected.value];
+	    form.setAttribute(action', actionURL);
+			      
+    };
+	window.addEventListener("load", function(){
 		let form = document.getElementById('searchForm')
 		form.addEventListener('submit', setSearchEngine); 
 		};
-		let actionURL = actions[selected.value]
 		
-		event.preventDefault();	
+		//event.preventDefault();	
 	
 			
         // TODO: register the handler
