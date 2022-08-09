@@ -4,8 +4,11 @@
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
-    function setSearchEnging() {
+    function setSearchEnging(event) {
 	console.log("FUNCTION setSearchEngine() IS RUNNING!");
+	    event.preventDefault();
+		
+    }
 		window.addEventListener("load", function(){
 		let form = document.getElementById('searchForm')
 		form.addEventListener('submit', setSearchEngine); 
