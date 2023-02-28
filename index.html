@@ -18,7 +18,7 @@
 		const form = document.querySelector('form'); //only form in page so it'll work
 		const searchEngineSelected = document.querySelector("input[name=engines]:checked"); //example in book made plural to match forms, asking for checked selection
 	
-		let url = actions[searchEngineSelected.value];
+		let url = actions.value;
 		form.action = url; //assigns url based on selection
 	}
 
