@@ -2,18 +2,47 @@
 
 <head>
 	<meta charset="utf-8">
+	  
 	<script>
 		// TODO: create a handler
+
+		function setSearchEngine() {
+    
+		let actions = { //object to pull url based on selection, all are strings
+		  google: "https://www.google.com/search",
+		  duckDuckGo: "https://www.duckduckgo.com",
+		  bing: "https://www.bing.com/search",
+		  ask: "https://www.ask.com/web",
+		};
+		
+		const form = document.getElementById('searchForm'); //grab form element with getelementbyid
+		const selectedEngine = document.querySelector('input[name=engine]:checked'); //example in book made plural to match forms, asking for checked selection
+		const url = actions[selectedEngine.value]; //look for input with radio button checked
+		form.setAttribute('action', url); //plaintext attribute we need to set, referring to if we had action in form id...if we replace action with id. other action is referncing url 
+                                                                                                                            
+	}
     window.addEventListener("load", function(){
-        // TODO: register the handler
-    });
+		const form = document.getElementById('searchForm');
+    	form.addEventListener('submit', setSearchEngine); //not calling it, referencing it. submit events can be tied to form or button
+  });
+    
 	</script>
 </head>
 
 <body>
 
-	<form id="searchForm">
-    <!-- TODO: add form elements -->
+	<form id="searchForm" action = "">
+		<input type = "text" name = "q"/> <!--Step 1 Create a text input within the form and set its name attribute to the value "q".-->
+		
+		<label><input type="radio" name="engine" value="google"/> Google</label>
+		<label><input type="radio" name="engine" value="duckDuckGo"/> DuckDuckGo</label>
+		<label><input type="radio" name="engine" value="bing"/> Bing</label>
+		<label><input type="radio" name="engine" value="ask"/> Ask</label>
+
+	<!--Step 2) Create a radio group with one radio button for each search engine. Recall that radio buttons with the same name are grouped, so use the same value for this attribute, "engine", on each radio button.
+	Step 3) Create a label element for each radio button.-->
+		
+	<button id = "submit" value = "Go">Go!</button> <!--Step 4) Finally, add a submit button to the form and set it's value to "Go!".-->
 	</form>
 
 </body>
