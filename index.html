@@ -16,13 +16,12 @@
 		};
 		
 		const form = document.getElementById('searchForm'); //grab form element with getelementbyid
-		const searchEngineSelected = document.querySelector('input[name=engine]:checked'); //example in book made plural to match forms, asking for checked selection
-		const url = actions[searchEngineSelected?.value]; //look for input with radio button checked
+		const selectedEngine = document.querySelector('input[name=engine]:checked'); //example in book made plural to match forms, asking for checked selection
+		const url = actions[selectedEngine.value]; //look for input with radio button checked
 		form.setAttribute('action', url); //plaintext attribute we need to set, referring to if we had action in form id...if we replace action with id. other action is referncing url 
                                                                                                                             
-
+	}
     window.addEventListener("load", function(){
-        // TODO: register the handler
 		const form = document.getElementById('searchForm');
     	form.addEventListener('submit', setSearchEngine); //not calling it, referencing it. submit events can be tied to form or button
   });
@@ -39,6 +38,7 @@
 		<label><input type="radio" name="engine" value="duckDuckGo"/> DuckDuckGo</label>
 		<label><input type="radio" name="engine" value="bing"/> Bing</label>
 		<label><input type="radio" name="engine" value="ask"/> Ask</label>
+
 	<!--Step 2) Create a radio group with one radio button for each search engine. Recall that radio buttons with the same name are grouped, so use the same value for this attribute, "engine", on each radio button.
 	Step 3) Create a label element for each radio button.-->
 		
