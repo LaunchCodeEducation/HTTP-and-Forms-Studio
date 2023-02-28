@@ -2,25 +2,27 @@
 
 <head>
 	<meta charset="utf-8">
-
-	function setSearchEngine() {}
-    
-		let actions = { <!--object to pull url based on selection, all are strings-->
-		  "google": "https://www.google.com/search",
-		  "duckDuckGo": "https://www.duckduckgo.com",
-		  "bing": "https://www.bing.com/search",
-		  "ask": "https://www.ask.com/web",
-		};
-		
-		const form = document.querySelector('form'); <!--only form in page so it'll work-->
-		const searchEngineSelected = document.querySelector("input[name=engines]:checked"); <!--example in book made plural to match forms, asking for checked selection-->
-	
-		let url = actions[searchEngineSelected.value];
-		form.action = url; <!--assigns url based on selection-->
-	  }
 	  
 	<script>
 		// TODO: create a handler
+
+		function setSearchEngine() {
+    
+		let actions = { //object to pull url based on selection, all are strings
+		  google: "https://www.google.com/search",
+		  duckDuckGo: "https://www.duckduckgo.com",
+		  bing: "https://www.bing.com/search",
+		  ask: "https://www.ask.com/web",
+		};
+		
+		const form = document.querySelector('form'); //only form in page so it'll work
+		const searchEngineSelected = document.querySelector("input[name=engines]:checked"); //example in book made plural to match forms, asking for checked selection
+	
+		let url = actions[searchEngineSelected.value];
+		form.action = url; //assigns url based on selection
+	}
+
+
     window.addEventListener("load", function(){
         // TODO: register the handler
 		console.log("Hello!");
