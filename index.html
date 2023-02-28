@@ -15,19 +15,16 @@
 		  ask: "https://www.ask.com/web",
 		};
 		
+		let form = document.getElementById('searchForm'); //grab form element with getelementbyid
 		const searchEngineSelected = document.querySelector("input[name=engine]:checked"); //example in book made plural to match forms, asking for checked selection
-		
-		let form = document.getElementById('searchForm');
-		let url = actions[searchEngineSelected.value];
-		form.action = url; //assigns url based on selection
-		form.setAttribute(actions, url);
-	}
-
+		let url = actions[searchEngineSelected.value]; //look for input with radio button checked
+		form.setAttribute('action', action);
+                                                                                                                            
 
     window.addEventListener("load", function(){
         // TODO: register the handler
-		const button = document.querySelector('button');
-    	button.addEventListener('submit', setSearchEngine); //not calling it, referencing it. submit events can be tied to form or button
+		const form = document.getElementById('searchForm');
+    	form.addEventListener('submit', setSearchEngine); //not calling it, referencing it. submit events can be tied to form or button
   });
     
 	</script>
@@ -35,8 +32,8 @@
 
 <body>
 
-	<form id="searchForm" method ="post">
-		<input type = "text" name = "q"/> <!--Step 1) Create a text input within the form and set its name attribute to the value "q".-->
+	<form id="searchForm">
+		<input type = "text" name = "q"/> <!--Step 1 Create a text input within the form and set its name attribute to the value "q".-->
 		
 		<label><input type="radio" name="engine" value="google"/> Google</label>
 		<label><input type="radio" name="engine" value="duckDuckGo"/> DuckDuckGo</label>
