@@ -17,7 +17,7 @@
 		
 		const form = document.getElementById('searchForm'); //grab form element with getelementbyid
 		const searchEngineSelected = document.querySelector('input[name=engine]:checked'); //example in book made plural to match forms, asking for checked selection
-		const url = actions[searchEngineSelected.value]; //look for input with radio button checked
+		const url = actions[searchEngineSelected?.value]; //look for input with radio button checked
 		form.setAttribute('action', url); //plaintext attribute we need to set, referring to if we had action in form id...if we replace action with id. other action is referncing url 
                                                                                                                             
 
@@ -32,7 +32,7 @@
 
 <body>
 
-	<form id="searchForm">
+	<form id="searchForm" action = "">
 		<input type = "text" name = "q"/> <!--Step 1 Create a text input within the form and set its name attribute to the value "q".-->
 		
 		<label><input type="radio" name="engine" value="google"/> Google</label>
