@@ -13,7 +13,16 @@
 <body>
 
 	<form id="searchForm">
-    <!-- TODO: add form elements -->
+		<input type = "text" name = "q"/> <!--Step 1) Create a text input within the form and set its name attribute to the value "q".-->
+		
+		<label>Google<input type="radio" name="engine" value="google"/></label>
+		<label>DuckDuckGo<input type="radio" name="engine" value="duckDuckGo"/></label>
+		<label>Bing<input type="radio" name="engine" value="bing"/></label>
+		<label>Ask<input type="radio" name="engine" value="ask"/></label>
+	<!--Step 2) Create a radio group with one radio button for each search engine. Recall that radio buttons with the same name are grouped, so use the same value for this attribute, "engine", on each radio button.
+	Step 3) Create a label element for each radio button.-->
+		
+		<input type = "submit" value = Go!/> <!--Step 4) Finally, add a submit button to the form and set it's value to "Go!".-->
 	</form>
 
 </body>
