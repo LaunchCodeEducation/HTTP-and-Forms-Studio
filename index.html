@@ -3,10 +3,46 @@
 <head>
 	<meta charset="utf-8">
 	<script>
-		// TODO: create a handler
+		// TODO: create a handler<form action="" method="GET">
+	<form action="" method="GET">
+  <label for="q">Search:</label>
+  <input type="text" name="q" id="q" placeholder="Enter your search query" />
+
+  <p>Search Engine Options:</p>
+
+  <label for="google">
+    <input type="radio" name="engine" id="google" value="google" />
+    Google
+  </label>
+
+  <label for="duckduckgo">
+    <input type="radio" name="engine" id="duckduckgo" value="duckDuckGo" />
+    DuckDuckGo
+  </label>
+
+  <label for="bing">
+    <input type="radio" name="engine" id="bing" value="bing" />
+    Bing
+  </label>
+
+  <label for="ask">
+    <input type="radio" name="engine" id="ask" value="ask" />
+    Ask
+  </label>
+
+  <br />
+
+  <input type="submit" value="Go!" />
+</form>
+function setSearchEngine(event) {
+    event.preventDefault(); // Prevent form submission for now
+    console.log('setSearchEngine ran');
+}
     window.addEventListener("load", function(){
         // TODO: register the handler
-    });
+		let searchForm = document.getElementById('searchForm');
+    searchForm.addEventListener('submit', setSearchEngine);
+  });
 	</script>
 </head>
 
